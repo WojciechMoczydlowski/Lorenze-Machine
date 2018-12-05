@@ -1,10 +1,4 @@
-﻿  pch.cpp
-  Baudot.cpp
-  CycleList.cpp
-  LorenzMachine.cpp
-  LorenzWheel.cpp
+﻿  Baudot.cpp
   PROI2.cpp
-  ViewInput.cpp
-  ViewOutput.cpp
   Generating Code...
   PROI2.vcxproj -> C:\naDyskE\proi2\PROI2\Debug\PROI2.exe
