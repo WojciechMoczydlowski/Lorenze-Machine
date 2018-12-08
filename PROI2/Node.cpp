@@ -16,4 +16,4 @@ Node::~Node()
 
 void Node::setNext(Node * nextNode) { next = nextNode; }
 void Node::setPrev(Node * prevNode) { prev = prevNode; }
-void Node::setValue(int nodeValue) { value = nodeValue; }
+void Node::setValue(bool nodeValue) { value = nodeValue; }

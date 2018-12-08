@@ -7,15 +7,15 @@ public:
 
 	void setNext(Node * nextNode);
 	void setPrev(Node * prev);
-	void setValue(int nodeValue);
+	void setValue(bool nodeValue);
 
 	Node * getNext() { return next; }
 	Node * getPrev() { return prev; }
-	int getValue() { return value; }
+	bool getValue() { return value; }
 
 private:
 	Node *next;
 	Node *prev;
-	int value;
+	bool value;
 };
 
