@@ -155,6 +155,7 @@
     <ClInclude Include="CycleList.h" />
     <ClInclude Include="LorenzMachine.h" />
     <ClInclude Include="LorenzWheel.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ViewInput.h" />
     <ClInclude Include="ViewOutput.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="CycleList.cpp" />
     <ClCompile Include="LorenzMachine.cpp" />
     <ClCompile Include="LorenzWheel.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
