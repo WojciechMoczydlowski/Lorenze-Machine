@@ -1,12 +1,12 @@
 #include "pch.h"
 #include "CycleList.h"
 #include "Node.h"
+#include <iostream>
 
 
 CycleList::CycleList()
 {
 	head = nullptr;
-	numberOfNodes = 0;
 }
 
 
@@ -15,7 +15,6 @@ CycleList::~CycleList()
 
 }
 
-void CycleList::setNumberOfNodes(int numberOfNodesToSet) {};
 void CycleList::setHead(Node * headToSet) {};
 
 void CycleList::addNode(bool value) {
@@ -32,13 +31,11 @@ void CycleList::addNode(bool value) {
 
 		nextNode->setPrev(currentNode);
 		nextNode->setNext(head);
+		nextNode->setValue(value);
 
 		currentNode->setNext(nextNode);
 		head->setPrev(nextNode);
 	}
-
-	numberOfNodes++;
 };
-
 
 void CycleList::deleteNode(Node * currentNode) {};
