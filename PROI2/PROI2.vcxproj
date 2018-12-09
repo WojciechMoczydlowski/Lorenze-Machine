@@ -154,6 +154,7 @@
     <ClInclude Include="Baudot.h" />
     <ClInclude Include="CycleList.h" />
     <ClInclude Include="LorenzMachine.h" />
+    <ClInclude Include="lorenzMachineSimulator.h" />
     <ClInclude Include="LorenzWheel.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="pch.h" />
@@ -164,6 +165,7 @@
     <ClCompile Include="Baudot.cpp" />
     <ClCompile Include="CycleList.cpp" />
     <ClCompile Include="LorenzMachine.cpp" />
+    <ClCompile Include="lorenzMachineSimulator.cpp" />
     <ClCompile Include="LorenzWheel.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="pch.cpp">
