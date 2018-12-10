@@ -32,3 +32,17 @@ void LorenzWheel::rotateWheel() {
 void LorenzWheel::resetWheel() {
 	currentNode = getHead();
 }
+
+void LorenzWheel::initializeWheel(int pinPosition, std::string pinSettings) {
+	
+	setPinPosition(pinPosition);
+
+	int sizeOfWheel = (int)pinSettings.length();
+
+	for (int i = 0; i < sizeOfWheel; i++) {
+		bool pin;
+		if (pinSettings[i] == '0') pin = false;
+		else pin = true;
+		addNode(pin);
+		}
+};

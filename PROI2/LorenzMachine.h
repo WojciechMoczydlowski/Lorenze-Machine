@@ -9,7 +9,6 @@ public:
 
 	std::string codeMessage(std::string message);
 	std::string decodeMessage(std::string message);
-
 private:
 
 	LorenzWheel CollectionOfWheelsK[5];
@@ -17,8 +16,8 @@ private:
 	LorenzWheel WheelM1;
 	LorenzWheel WheelM2;
 
-	bool key[5]; 
 
 	void rotateAllWheels();
+	void initializeAllWheels(int *initialPositionOfAllWheels);
 };
 
