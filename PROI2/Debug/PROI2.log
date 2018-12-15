@@ -1,5 +1,5 @@
 ﻿  LorenzMachine.cpp
-c:\nadyske\proi2\proi2\lorenzmachine.cpp(54): warning C4101: 'key': unreferenced local variable
+c:\nadyske\proi2\proi2\lorenzmachine.cpp(70): warning C4101: 'key': unreferenced local variable
   LorenzWheel.cpp
   PROI2.cpp
   Generating Code...

@@ -7,7 +7,7 @@ public:
 	LorenzMachine();
 	~LorenzMachine();
 
-	std::string codeMessage(std::string message);
+	std::string codeMessage(std::string message,int *pinSettings);
 	std::string decodeMessage(std::string message);
 private:
 
@@ -16,8 +16,7 @@ private:
 	LorenzWheel WheelM1;
 	LorenzWheel WheelM2;
 
-
 	void rotateAllWheels();
-	void initializeAllWheels(int *initialPositionOfAllWheels);
+	void setPinPositionOfAllWheels(int *initialPositionOfAllWheels);
 };
 

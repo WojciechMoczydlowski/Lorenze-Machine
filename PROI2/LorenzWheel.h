@@ -9,17 +9,15 @@ public:
 	LorenzWheel();
 	~LorenzWheel();
 
-	
-
 	Node* getCurrentNode() { return currentNode; }
 
 	void rotateWheel();
 	void resetWheel();
-	void initializeWheel(int pinPosition, std::string pinSettings);
-
+	void initializeWheel(std::string pinSettings);
+	void setPinPosition(int pinPositionToSet);
 
 private:
 	Node *currentNode;
-	void setPinPosition(int pinPositionToSet);
+	
 };
 

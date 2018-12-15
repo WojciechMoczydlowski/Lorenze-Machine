@@ -5,7 +5,6 @@
 
 LorenzWheel::LorenzWheel()
 {
-	currentNode = nullptr;
 }
 
 LorenzWheel::~LorenzWheel()
@@ -33,10 +32,8 @@ void LorenzWheel::resetWheel() {
 	currentNode = getHead();
 }
 
-void LorenzWheel::initializeWheel(int pinPosition, std::string pinSettings) {
+void LorenzWheel::initializeWheel(std::string pinSettings) {
 	
-	setPinPosition(pinPosition);
-
 	int sizeOfWheel = (int)pinSettings.length();
 
 	for (int i = 0; i < sizeOfWheel; i++) {
@@ -45,4 +42,5 @@ void LorenzWheel::initializeWheel(int pinPosition, std::string pinSettings) {
 		else pin = true;
 		addNode(pin);
 		}
+	currentNode = getHead();
 };
