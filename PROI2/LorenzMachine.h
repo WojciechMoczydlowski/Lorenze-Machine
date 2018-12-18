@@ -8,7 +8,6 @@ public:
 	~LorenzMachine();
 
 	std::string codeMessage(std::string message,int *pinSettings);
-	std::string decodeMessage(std::string message);
 private:
 
 	LorenzWheel CollectionOfWheelsK[5];

@@ -70,6 +70,17 @@ std::string Baudot::decodeOneCharacter(std::string strEncrypted) {
 		eCharacter.append("Y");
 	else if (strEncrypted == "10001")
 		eCharacter.append("Z");
+	else if (strEncrypted == "11011")
+		eCharacter.append(".");
+	else if (strEncrypted == "01000")
+		eCharacter.append(",");
+	else if (strEncrypted == "00000")
+		eCharacter.append("?");
+	else if (strEncrypted == "00010")
+		eCharacter.append("(");
+	else if (strEncrypted == "11111")
+		eCharacter.append(")");
+
 
 	return eCharacter;
 };
@@ -113,6 +124,12 @@ std::string Baudot::convertToBaudotCode(std::string userInput) {
 		case 'X':	ita2.append("11101"); break;
 		case 'Y':	ita2.append("10101"); break;
 		case 'Z':	ita2.append("10001"); break;
+		case '.':	ita2.append("11011"); break;
+		case ',':	ita2.append("01000"); break;
+		case '?':	ita2.append("00000"); break;
+		case '(':	ita2.append("00010"); break;
+		case ')':	ita2.append("11111"); break;
+
 		default: break;
 		}
 	}
@@ -122,7 +139,7 @@ std::string Baudot::convertToBaudotCode(std::string userInput) {
 std::string Baudot::baudotCodeToAscii(std::string baudotCode) {
 
 	std::string asciiCode = "";
-	std::string eCharacter;
+	std::string eCharacter="";
 	int numberOfBits = 0;
 	int lenght = baudotCode.length();
 		for (int i = 0; i <= lenght; i++) {

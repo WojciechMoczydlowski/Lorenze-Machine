@@ -26,33 +26,38 @@ LorenzMachine::LorenzMachine()
 
 LorenzMachine::~LorenzMachine()
 {
+
 }
 
 std::string LorenzMachine::codeMessage(std::string message,int *pinSettings) {
 
-	setPinPositionOfAllWheels(pinSettings);
-	Baudot myBaudotConverter;
 
-	std::string messageInBaudot = myBaudotConverter.convertToBaudotCode(message);
+	setPinPositionOfAllWheels(pinSettings);
+	Baudot baudotToCodeMessage;
+
+	std::string messageInBaudot = baudotToCodeMessage.convertToBaudotCode(message);
 	std::string encryptedMessageInBaudot="";
 	std::string encryptedMessageInAscii="";
-	std::cout << messageInBaudot;
+
 	bool key[5];
 	char  oneCharacter[5];
 
 	int lenghtOfMessageInBaudot = (int)messageInBaudot.length();
 	int breakPoint;
-
+	std::cout<< lenghtOfMessageInBaudot<< "\n"  ;
 	for (int i = 0; i < lenghtOfMessageInBaudot; i++) {
 
 		breakPoint = i % 5;
-		std::cout<< "\n" << breakPoint ;
+		//std::cout<< "\n" << breakPoint ;
 
 		key[breakPoint] = CollectionOfWheelsK[breakPoint].getCurrentNode()->getValue() ^ CollectionOfWheelsS[breakPoint].getCurrentNode()->getValue();
 		oneCharacter[breakPoint] = messageInBaudot[i];
 
 		if (breakPoint == 4){
+		/*	std::cout << "\n";*/
 			for (int j = 0; j < 5; j++) {
+				if (key[j])std::cout << "1";
+				else std::cout << "0";
 				bool keyToXor;
 				if (oneCharacter[j] == '0') { keyToXor = false; }
 				else { keyToXor = true; }
@@ -60,16 +65,20 @@ std::string LorenzMachine::codeMessage(std::string message,int *pinSettings) {
 				else {encryptedMessageInBaudot.append("0");}
 			}
 			rotateAllWheels();
+			std::cout << " ";
 		}
 	}
-	return encryptedMessageInBaudot;
-};
+	encryptedMessageInAscii = baudotToCodeMessage.baudotCodeToAscii(encryptedMessageInBaudot);
 
-std::string LorenzMachine::decodeMessage(std::string message) {
+	std::cout <<"\n"<<"message  " << message<< "\n";
+	std::cout << "messageInBaudot  " << messageInBaudot << "\n";
+	std::cout << "encryptedMessageInBaudot  " << encryptedMessageInBaudot << "\n";
+	std::cout << "encryptedMessageInAscii  " << encryptedMessageInAscii << "\n";
 
-		bool key[5];
 
-	return "";
+	
+	
+	return encryptedMessageInAscii;
 };
 
 void LorenzMachine::rotateAllWheels() {
@@ -91,13 +100,13 @@ void LorenzMachine::rotateAllWheels() {
 void LorenzMachine::setPinPositionOfAllWheels(int *initialPositionOfAllWheels) {
 
 	for (int i = 0; i < 5; i++) {
-		CollectionOfWheelsK[0].setPinPosition(initialPositionOfAllWheels[i]);
+		CollectionOfWheelsK[i].setPinPosition(initialPositionOfAllWheels[i]);
 	}
 	
 	WheelM1.setPinPosition(initialPositionOfAllWheels[5]);
 	WheelM2.setPinPosition(initialPositionOfAllWheels[6]);
 
 	for (int i = 0; i < 5; i++) {
-		CollectionOfWheelsS[0].setPinPosition(initialPositionOfAllWheels[i+7]);
+		CollectionOfWheelsS[i].setPinPosition(initialPositionOfAllWheels[i+7]);
 	}
 };

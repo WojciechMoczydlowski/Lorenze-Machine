@@ -1,6 +1,2 @@
-﻿  LorenzMachine.cpp
-c:\nadyske\proi2\proi2\lorenzmachine.cpp(70): warning C4101: 'key': unreferenced local variable
-  LorenzWheel.cpp
-  PROI2.cpp
-  Generating Code...
+﻿  PROI2.cpp
   PROI2.vcxproj -> C:\naDyskE\proi2\PROI2\Debug\PROI2.exe
