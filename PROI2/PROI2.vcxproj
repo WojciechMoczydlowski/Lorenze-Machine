@@ -158,6 +158,7 @@
     <ClInclude Include="LorenzWheel.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Test.h" />
     <ClInclude Include="ViewInput.h" />
     <ClInclude Include="ViewOutput.h" />
   </ItemGroup>
@@ -175,6 +176,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="PROI2.cpp" />
+    <ClCompile Include="Test.cpp" />
     <ClCompile Include="ViewInput.cpp" />
     <ClCompile Include="ViewOutput.cpp" />
   </ItemGroup>
