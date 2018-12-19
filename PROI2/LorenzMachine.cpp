@@ -44,7 +44,7 @@ std::string LorenzMachine::codeMessage(std::string message,int *pinSettings) {
 
 	int lenghtOfMessageInBaudot = (int)messageInBaudot.length();
 	int breakPoint;
-	std::cout<< lenghtOfMessageInBaudot<< "\n"  ;
+	//std::cout<< lenghtOfMessageInBaudot<< "\n"  ;
 	for (int i = 0; i < lenghtOfMessageInBaudot; i++) {
 
 		breakPoint = i % 5;
@@ -56,8 +56,8 @@ std::string LorenzMachine::codeMessage(std::string message,int *pinSettings) {
 		if (breakPoint == 4){
 		/*	std::cout << "\n";*/
 			for (int j = 0; j < 5; j++) {
-				if (key[j])std::cout << "1";
-				else std::cout << "0";
+				/*if (key[j])std::cout << "1";
+				else std::cout << "0";*/
 				bool keyToXor;
 				if (oneCharacter[j] == '0') { keyToXor = false; }
 				else { keyToXor = true; }
@@ -70,14 +70,10 @@ std::string LorenzMachine::codeMessage(std::string message,int *pinSettings) {
 	}
 	encryptedMessageInAscii = baudotToCodeMessage.baudotCodeToAscii(encryptedMessageInBaudot);
 
-	std::cout <<"\n"<<"message  " << message<< "\n";
-	std::cout << "messageInBaudot  " << messageInBaudot << "\n";
-	std::cout << "encryptedMessageInBaudot  " << encryptedMessageInBaudot << "\n";
-	std::cout << "encryptedMessageInAscii  " << encryptedMessageInAscii << "\n";
-
-
-	
-	
+	//std::cout <<"\n"<<"message  " << message<< "\n";
+	//std::cout << "messageInBaudot  " << messageInBaudot << "\n";
+	//std::cout << "encryptedMessageInBaudot  " << encryptedMessageInBaudot << "\n";
+	//std::cout << "encryptedMessageInAscii  " << encryptedMessageInAscii << "\n";
 	return encryptedMessageInAscii;
 };
 
